@@ -9,8 +9,8 @@ RSpec.configure do |config|
 RSpec.describe '#Vehicle' do
     before(:each) do
     @vehicle = Vehicle.new("2001", "Honda", "Civic") 
-
     end
+    
     it 'exists' do
         expect(@vehicle).to be_an_instance_of(Vehicle)
     end
