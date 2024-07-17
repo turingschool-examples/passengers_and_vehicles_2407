@@ -12,5 +12,9 @@ RSpec.describe Vehicle do
 
     it 'knows if speeding' do
         expect(@vehicle.speeding?).to be false
+
+        @vehicle.speed
+
+        expect(@vehicle.speeding?).to be true
     end
 end
