@@ -22,7 +22,9 @@ RSpec.describe Park do
  end
 
 
-  xit 'can list all vehicles that entered the park' do
+  it 'can list all vehicles that entered the park' do
+    expect(@park.vehicles).to eq([])
+    
 
   end
 
