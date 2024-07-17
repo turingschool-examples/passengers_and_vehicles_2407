@@ -17,15 +17,18 @@ RSpec.describe Park do
         expect(@glacier.price).to eq(50)
     end
 
-    xit 'has an list of vehicles entering park' do
-        expect(@glacier)
+    it 'has an list of vehicles entering park' do
+        expect(@glacier.entrance_list).to eq([])
     end
 
-    xit 'can track vehicles entering' do
+    it 'can track vehicles entering' do
         @vehicle_1 = Vehicle.new("2001", "Honda", "Civic")
         @vehicle_2 = Vehicle.new("2001", "Honda", "Civic")
         @vehicle_3 = Vehicle.new("2001", "Honda", "Civic")
 
+        @glacier.enter(@vehicle_1)
+        @glacier.enter(@vehicle_2)
+        @glacier.enter(@vehicle_3)
 
         expect(@glacier.entrance_list).to eq([@vehicle_1, @vehicle_2, @vehicle_3])
     end
