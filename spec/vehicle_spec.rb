@@ -60,6 +60,8 @@ RSpec.describe 'Vehicle' do
             @vehicle.add_passenger(@charlie)
             expect(@vehicle.passengers.length).to eq 1
             expect(@vehicle.passengers).to include be_an_instance_of Passenger
+            @vehicle.add_passenger(@jude)
+            expect(@vehicle.passengers.length).to eq 2
         end
     end
     
