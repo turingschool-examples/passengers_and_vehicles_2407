@@ -14,6 +14,15 @@ RSpec.describe'Passenger' do
         it 'will be an isntance of a passenger' do
             expect(@charlie).to be_an_instance_of Passenger
         end
+        require'pry';binding.pry
+        it 'will hold a hash attribute with a name key/value pair' do
+            expect(@charlie.name).to eq "Charlie"
+        end
+        
+        it 'will hold a hash attribute with an age key/value pair' do
+            expect(@charlie.age).to eq 18
+        end
+
     end
 
     describe '#adult?' do 
