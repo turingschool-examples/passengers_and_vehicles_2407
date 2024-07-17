@@ -24,12 +24,9 @@ RSpec.configure do |config|
 
     it 'can say who can drive' do
       expect(@charlie.driver?).to be(false)
-
       @charlie.drive
-
       expect(@charlie.driver?).to be(true)
     end
-
 end
 
 
