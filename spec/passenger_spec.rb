@@ -16,7 +16,8 @@ RSpec.describe Passenger do
     end
 
     it 'knows if passenger is adult' do
-        expect(charlie.adult?).to be true
+        expect(@charlie.adult?).to be true
+        expect(@taylor.adult?).to be false
     end
 
 
