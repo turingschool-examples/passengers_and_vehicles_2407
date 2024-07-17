@@ -6,6 +6,7 @@ class Passenger
         # require 'pry'; binding.pry
         @name = info["name"]
         @age = info["age"]
+        @drive = false
     end
 
     def adult?
@@ -13,6 +14,18 @@ class Passenger
             true
         else
             false
+        end
+    end
+
+    def drive
+        @drive = true
+    end
+
+    def driver?
+        if @drive == false
+            false
+        elsif @drive == true
+            true
         end
     end
 end
