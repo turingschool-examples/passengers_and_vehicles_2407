@@ -12,4 +12,8 @@ class Passenger
         return false unless @age >= 18
         true
     end
+
+    def driver?
+        @driver
+    end
 end
