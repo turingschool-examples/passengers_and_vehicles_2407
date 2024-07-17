@@ -28,6 +28,12 @@ RSpec.describe 'Vehicle' do
         it 'will hold a model attribute based on the argument' do
             expect(@vehicle.model).to eq "Civic"
         end
+        it 'will hold a speeding attribute initialized to be false' do
+            expect(@vehicle.speeding).to eq false
+        end
+        it 'will hold a passengers attribute initialized to be an empty array' do
+            expect(@vehicle.passengers).to eq []
+        end
     end
 
     describe '#speeding?' do
