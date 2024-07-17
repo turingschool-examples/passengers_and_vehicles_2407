@@ -56,7 +56,11 @@ RSpec.describe 'Vehicle' do
     end
 
     describe '#add_passenger()' do
-
+        it 'will add the Passenger instance to the array of passengers attribute' do
+            @vehicle.add_passenger(@charlie)
+            expect(@vehicle.passengers.length).to eq 1
+            expect(@vehicle.passengers).to include be_an_instance_of Passenger
+        end
     end
     
     describe '#passengers' do
