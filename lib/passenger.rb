@@ -2,9 +2,9 @@ class Passenger
     attr_reader :name,
                 :age
 
-    def initialize(name, age)
-        @name = name
-        @age = age
+    def initialize(person_details)
+        @name = person_details["name"]
+        @age = person_details["age"]
     end
 
     def adult?

@@ -1,9 +1,10 @@
 require './lib/passenger'
+require 'pry'
 
 RSpec.describe Passenger do
     before(:each) do
-        @passenger_1 = Passenger.new('Charlie', 18)
-        @passenger_2 = Passenger.new('Taylor', 12)
+        @passenger_1 = Passenger.new({"name" => "Charlie", "age" => 18})
+        @passenger_2 = Passenger.new({"name" => "Taylor", "age" => 12})
     end
 
     it 'initialize name' do
