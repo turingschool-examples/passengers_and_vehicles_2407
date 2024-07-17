@@ -8,7 +8,7 @@ class Park
         @vehicles_in_park = []
     end
 
-    def vehicles_enters(vehicle)
+    def vehicle_enters(vehicle)
         @vehicles_in_park << vehicle
     end
 end
