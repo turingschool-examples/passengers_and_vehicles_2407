@@ -43,6 +43,10 @@ RSpec.describe Park do
             @flatwoods.vehicle_enters(@vehicle)
             expect(@flatwoods.vehicles_in_park[0].passengers.count).to eq(3)
         end
+        it 'charges per adult that enters' do
+            @flatwoods.vehicle_enters(@vehicle)
+            expect(@flatwoods.park_revenue).to eq(4)
+        end
     end
 
     describe '#people_in_park' do
@@ -52,4 +56,6 @@ RSpec.describe Park do
             expect(@hillsborough.people_in_park).to eq(nil)
         end
     end
+
+    
 end
