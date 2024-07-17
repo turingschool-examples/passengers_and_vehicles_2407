@@ -7,5 +7,9 @@ class Park
         @entrance_list = []
     end
 
+    def enter(vehicle)
+        @entrance_list << vehicle
+    end
+
    
 end
