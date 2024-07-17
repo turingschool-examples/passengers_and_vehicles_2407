@@ -15,4 +15,8 @@ class Park
         @passengers = {}
         @revenue = 0
     end
+
+    def generate_revenue
+        @revenue
+    end
 end
