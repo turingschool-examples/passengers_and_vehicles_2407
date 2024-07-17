@@ -18,8 +18,12 @@ RSpec.describe Passenger do
 
   describe "#adult?" do
     it "returns a boolean" do
-  
       expect([true, false]).to include(@passenger_1.adult?)
+    end
+
+    it "returns the expected value" do
+      expect(@passenger_1.adult?).to be_truthy
+      expect(@passenger_2.adult?).to be_falsey
     end
 
   end
