@@ -17,7 +17,7 @@ Use TDD to create a `Passenger` class that responds to the following interaction
 pry(main)> require './lib/passenger'
 # => true
 
-pry(main)> charlie = Passenger.new({"name" => "Charlie", "age" => 18})    
+pry(main)> charlie = Passenger.new({"name" => "Charlie", "age" => 18}) 
 # => #<Passenger:0x00007fc1ad88b3c0...>
 
 pry(main)> taylor = Passenger.new({"name" => "Taylor", "age" => 12})    
