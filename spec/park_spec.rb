@@ -16,9 +16,11 @@ RSpec.describe Park do
     expect(@park).to be_instance_of(Park)
   end
 
- xit 'has attributes' do
+ it 'has attributes' do
+  expect(@park.name).to eq("Yellowstone")
+  expect(@park.admission_price).to eq(20)
+ end
 
-  end
 
   xit 'can list all vehicles that entered the park' do
 
