@@ -9,4 +9,8 @@ RSpec.describe Vehicle do
     it 'exists' do
         expect(@vehicle).to be_instance_of(Vehicle)
     end
+
+    it 'knows if speeding' do
+        expect(@vehicle.speeding?).to be false
+    end
 end

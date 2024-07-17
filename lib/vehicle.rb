@@ -1,10 +1,15 @@
 class Vehicle
     attr_reader :year, :make, :model
 
-    def initialize(year, make, model)
+    def initialize(year, make, model, speeding = false)
         @year = year
         @make = make
         @model = model
+        @speeding = speeding
+    end
+
+    def speeding?
+        @speeding
     end
 
 end
