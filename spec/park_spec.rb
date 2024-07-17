@@ -24,8 +24,9 @@ RSpec.describe Park do
 
   it 'can list all vehicles that entered the park' do
     expect(@park.vehicles).to eq([])
-    
-
+    @park.add_vehicle(@vehicle_1)
+    @park.add_vehicle(@vehicle_2)
+    expect(@park.vehicles).to eq([@vehicle_1, @vehicle_2])
   end
 
   xit 'can list all passengers taht entered the park' do 
