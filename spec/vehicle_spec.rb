@@ -20,9 +20,13 @@ RSpec.describe Vehicle do
 
     describe "#speeding" do
         it 'has speed attribute' do
+            expect(@vehicle.speeding?).to eq false
         end
 
         it 'can change speeding attribute' do
+            expect(@vehicle.speeding?).to eq false
+            @vehicle.speed
+            expect(@vehicle.speeding?).to eq true
         end
     end
 
