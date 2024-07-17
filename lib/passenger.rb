@@ -6,6 +6,14 @@ class Passenger
         @age = attributes[:age]
     end
 
+    def charlie
+        charlie = Passenger.new({"name" => "Charlie", "age" => 18})
+    end
+
+    def taylor
+        taylor = Passenger.new({"name" => "Taylor", "age" => 12})
+    end
+
     def adult?
         if age == 18
             puts true
@@ -15,9 +23,4 @@ class Passenger
     end
 
     require 'pry'; binding.pry
-    # charlie = Passenger.new({"name" => "Charlie", "age" => 18})
-    # taylor = Passenger.new({"name" => "Taylor", "age" => 12})
 end
-
-# charlie = Passenger.new({"name" => "Charlie", "age" => 18})
-# taylor = Passenger.new({"name" => "Taylor", "age" => 12})
