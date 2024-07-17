@@ -44,19 +44,69 @@ RSpec.describe Park do
     describe "#vehicle_pass" do
         it 'can add vehicles to the vehicles array' do
             @park_1.vehicle_pass(@vehicle_1)
+            
             expect(@park_1.vehicles).to include Vehicle
             expect(@park_1.vehicles.count).to eq 1
         end
     end
 
     describe "#track_passengers" do
+        it 'adds passengers with add_passenger' do
+            @park_1.add_passengers(@vehicle_1)
+            
+            expect(@park_1.passengers).to include Passenger
+            expect(@park_1.passengers[0].name).to eq "Charlie"
+        end
+    
         it 'adds the passengers of the vehicle to passengers array' do
             @park_1.vehicle_pass(@vehicle_1)
+            
             expect(@park_1.vehicles.count).to eq 1
             expect(@park_1.passengers.count).to eq 3
+        end
+
+        it 'adds the passengers of multiple vehicles to passengers array' do
+            @park_2.vehicle_pass(@vehicle_1)
+            @park_2.vehicle_pass(@vehicle_2)
+
+            expect(@park_2.vehicles.count).to eq 2
+            expect(@park_2.passengers.count).to eq 6
         end
     end
 
     describe "#track_revenue" do
+        it 'can charge admissions correctly' do
+            @park_2.charge_admission(@charlie)
+            expect(@park_2.collected_admissions).to eq 35
+
+            @park_1.charge_admission(@charlie)
+            expect(@park_1.collected_admissions).to eq 40
+        end
+    
+        it 'can charge admissions off age' do
+            @park_1.charge_admission(@charlie)
+            expect(@park_1.collected_admissions).to eq 40
+
+            @park_1.charge_admission(@taylor)
+            expect(@park_1.collected_admissions).to eq 60
+        end
+
+        it 'charges each passenger in a vehicle' do
+            expect(@park_2.collected_admissions).to eq 0
+            @park_2.vehicle_pass(@vehicle_1)
+            
+            expect(@park_2.vehicles.count).to eq 1
+            expect(@park_2.passengers.count).to eq 3
+            expect(@park_2.collected_admissions).to eq 85
+        end
+
+        it 'tracks all revenue for all vehicles' do
+            @park_2.vehicle_pass(@vehicle_1)
+            @park_2.vehicle_pass(@vehicle_2)
+
+            expect(@park_2.vehicles.count).to eq 2
+            expect(@park_2.passengers.count).to eq 6
+            expect(@park_2.collected_admissions).to eq 150
+        end
     end
 end

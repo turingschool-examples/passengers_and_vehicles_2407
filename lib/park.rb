@@ -22,7 +22,16 @@ class Park
 
     def add_passengers(vehicle)
         vehicle.passengers.each do |passenger|
+            charge_admission(passenger)
             @passengers << passenger
+        end
+    end
+
+    def charge_admission(passenger)
+        if passenger.age >= 18
+            @collected_admissions += @adult_admission
+        else
+            @collected_admissions += @child_admission
         end
     end
 end
