@@ -111,15 +111,49 @@ RSpec.describe Park do
     end
 
     describe "#analyitics" do
+        before(:each) do
+            @park_1.vehicle_pass(@vehicle_1)
+            @park_1.vehicle_pass(@vehicle_2)
+
+            @park_2.vehicle_pass(@vehicle_1)
+            @park_2.vehicle_pass(@vehicle_2)
+            @park_2.vehicle_pass(@vehicle_2)
+        end
+
         it 'can list all patrons of the park' do
+            expect(@park_1.passengers.count).to eq 6
+            p @park_1.print_list("Patrons")
+            # expect [Charlie, Taylor, George, George, Taylor, Cedric]
+            expect(@park_2.passengers.count).to eq 9
+            @park_2.print_list('Patrons')
+            # expect [Charlie, Taylor, George, George, Taylor, Cedric, George, Taylor, Cedric]
+        end
+
+        it 'can sort adults from children' do
+            @park_3 = Park.new({name: "Arlington National Park", adult_admission: 15, child_admission: 5})
+            expect(@park_3.adults.count).to eq 0
+            expect(@park_3.children.count).to eq 0
+            @park_3.charge_admission(@charlie)
+
+            expect(@park_3.adults.count).to eq 1
+            expect(@park_3.children.count).to eq 0
+            @park_3.charge_admission(@taylor)
+
+            expect(@park_3.adults.count).to eq 1
+            expect(@park_3.children.count).to eq 1
         end
 
         it 'can list all adults in the park' do
+            expect(@park_1.adults.count).to eq 3
+            expect(@park_2.adults.count).to eq 4
         end
 
         it 'can list all minors in the park' do
+            expect(@park_1.children.count).to eq 3
+            expect(@park_2.children.count).to eq 5
         end
 
         it 'can list any list alphabetically' do
         end
+    end
 end
