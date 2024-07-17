@@ -13,7 +13,3 @@ Rspec.describe Passenger do
         end
     end
 end
-
-
-
-#Passenger.new({"name" => "Charlie", "age" => 18}) Passenger.new({"name" => "Taylor", "age" => 12})    
