@@ -36,5 +36,15 @@ RSpec.describe Passenger do
     end
 
     describe '#driver' do
+        it 'has driver attribute' do
+            expect(@charlie.driver?).to be false
+            expect(@taylor.driver?).to be false
+        end
+
+        it 'can be changed to true' do
+            expect(@charlie.driver?).to be false
+            @charlie.drive
+            expect(@charlie.driver?).to be true
+        end
     end
 end

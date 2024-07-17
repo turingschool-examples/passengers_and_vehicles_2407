@@ -5,6 +5,7 @@ class Passenger
         @name = hash_data["name"]
         @age = hash_data["age"]
         @adult = check_age
+        @driver = false
     end
 
     def check_age
@@ -17,5 +18,13 @@ class Passenger
 
     def adult?
         @adult
+    end
+
+    def driver?
+        @driver
+    end
+
+    def drive
+        @driver = true
     end
 end
