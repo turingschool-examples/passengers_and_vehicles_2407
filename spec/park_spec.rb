@@ -39,5 +39,19 @@ RSpec.describe Park do
         expect(@park_2.vehicles).to include(@vehicle, @vehicle_2)
       end
     end
+
+    describe 'list all vehicles' do 
+      it 'returns all vehicles in parks' do 
+        @park_1.add_vehicles(@vehicle)
+        @park_1.add_vehicles(@vehicle_2)
+        @park_2.add_vehicles(@vehicle)
+        @park_2.add_vehicles(@vehicle_2)
+        # make a variable to hold the transformed list
+        list = ["year: 2001, make: Honda, model: Civic",
+        "year: 2024, make: Mercedez, model: Benz"]
+        expect(@park_1.list_all_vehicles).to eq(list)
+        expect(@park_2.list_all_vehicles).to eq(list)
+      end
+    end
   end
 end
