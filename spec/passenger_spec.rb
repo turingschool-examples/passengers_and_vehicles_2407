@@ -1,6 +1,6 @@
 require "./lib/passenger"
 
-Rspec.describe do
+RSpec.describe do
     before(:all) do
 
     end
@@ -12,7 +12,8 @@ Rspec.describe do
             expect(passenger_1.name).to eq("Charlie")
             expect(passenger_2.name).to eq("Taylor")
         end
-    
+    end
+
     describe 'age' do
         it 'has an age' do
             charlie = Passenger.new({"name" => "Charlie", "age" => 18})
