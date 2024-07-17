@@ -23,13 +23,17 @@ RSpec.describe Park do
 
     it 'can track vehicles entering' do
         @vehicle_1 = Vehicle.new("2001", "Honda", "Civic")
-        @vehicle_2 = Vehicle.new("2001", "Honda", "Civic")
-        @vehicle_3 = Vehicle.new("2001", "Honda", "Civic")
+        @vehicle_2 = Vehicle.new("2001", "A Space", "Odyssey")
+        @vehicle_3 = Vehicle.new("1995", "Kawasaki", "KLR-650")
 
         @glacier.enter(@vehicle_1)
         @glacier.enter(@vehicle_2)
         @glacier.enter(@vehicle_3)
 
         expect(@glacier.entrance_list).to eq([@vehicle_1, @vehicle_2, @vehicle_3])
+    end
+
+    xit 'can track passengers entering' do
+
     end
 end
