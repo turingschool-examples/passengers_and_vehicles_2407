@@ -10,8 +10,10 @@ RSpec.describe Passenger do
             expect(@passenger).to be_an_instance_of(Passenger)
         end
 
-        it'has parameters' do
-
+        it 'has parameters' do
+            # require 'pry'; binding.pry
+            expect(@passenger.name).to eq("Charlie")
+            expect(@passenger.age).to eq(18)
         end
     end
 end
