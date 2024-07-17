@@ -43,7 +43,7 @@ RSpec.describe 'Park' do
 
     describe '#generate_revenue' do
         it 'will generate an integer repersenting revenue' do
-
+            expect(@park.generate_revenue).to be Integer
         end
 
         it 'creates the revenue figure by charging the admission price to every adult included in the passenger list' do
