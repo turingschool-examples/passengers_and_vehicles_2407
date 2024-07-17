@@ -25,6 +25,14 @@ RSpec.describe Park do
         it 'has an empty arraw for vehicles' do
             expect(@park.vehicles).to eq []
         end
+
+        it "can list the vehicles that entered the park" do
+            @park.add_vehicle(@vehicle1)
+            @park.add_vehicle(@vehicle2)
+            @park.add_vehicle(@vehicle3)
+
+            expect(@park.vehicles).to eq [@vehicle1, @vehicle2, @vehicle3]
+        end
     end
 
 end
