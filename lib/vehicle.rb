@@ -1,24 +1,31 @@
-Class Vehicle
-  attr_reader :year, :make, :model, :speed
+class Vehicle
+
+  attr_reader :year, :make, :model, :speed, :passengers
 
   def initialize(year, make, model)
     @year = year
     @make = make
     @model = model
-    @speed = speed
-    passengers = []
+    @speed = false
+    @passengers = []
   end
 
   def speeding?
-    false
+    @speed
   end
 
-  def add_passengers
-    passengers += 1
+  def speed
+    @speed = true
+  end
+
+  def add_passenger(passenger)
+    @passengers.push(passenger)
   end
 
   def num_adults
-    @adult?.count
+    adults = []
+    @passeners.map do |passenger|
+      adults << passenger if passenger.drive? == true
+    end
   end
- 
 end

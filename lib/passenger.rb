@@ -1,28 +1,28 @@
 class Passenger
-  attr_reader :name, :age
+  attr_reader :name, :age, :adult, :drive
 
-  def initialize(something)
-    @name = name
-    @age = age
+  def initialize(data)
+    @name = data["name"]
+    @age = data["age"]
+    @adult = adult
+    @drive = @age >= 18
 
   end
 
   def adult?
-   if @adult >= 18
-    true
-   else
-    false
-   end
+    @age >= 18
+    
   end
 
    def drive
-    @charlie
+    @drive = true
    end
 
   def driver?
-    if @adult == true
+    if @drive == false
+      false
+    elsif @drive == true
       true
-    else false
     end
   end
 end
