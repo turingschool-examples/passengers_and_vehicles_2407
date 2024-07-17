@@ -13,8 +13,10 @@ RSpec.describe Vehicle do
     expect(@vehicle).to be_instance_of(Vehicle)
   end
 
-  xit 'has attributes' do
-
+  it 'has attributes' do
+    expect(@vehicle.year).to eq("2001")
+    expect(@vehicle.make).to eq("Honda")
+    expect(@vehicle.model).to eq("Civic")
   end
 
   xit 'can see if driver is speeding' do
