@@ -26,11 +26,11 @@ RSpec.describe Park do
         end
     end
 
-    describe '#vehicles_entered' do
+    describe '#vehicles_enters' do
         it 'lists all vehicles that entered the park' do
             expect(@flatwoods.vehicles_in_park).to eq([])
 
-            @flatwoods.vehicles_entered(@vehicle)
+            @flatwoods.vehicles_enters(@vehicle)
             expect(@flatwoods.vehicles_in_park).to eq([@vehicle])
         end
     end
