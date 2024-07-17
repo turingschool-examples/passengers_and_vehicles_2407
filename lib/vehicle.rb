@@ -3,8 +3,8 @@ class Vehicle
                 :make,
                 :model,
                 :speeds,
-                :passengers,
-                :adults
+                :passengers
+                # :adults
     
     def initialize(year, make, model)
         @year = year
@@ -12,7 +12,7 @@ class Vehicle
         @model = model
         @speeds = false
         @passengers = []
-        @adults = 0
+        # @adults = 0
     end
 
     def speeding?
@@ -28,7 +28,7 @@ class Vehicle
     end
 
     def num_adults
-        @adults = @passengers.count { |passenger| passenger.age >= 18 }
+        @passengers.count { |passenger| passenger.age >= 18 }
     end
 
 end
