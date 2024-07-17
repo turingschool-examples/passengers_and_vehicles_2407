@@ -23,5 +23,17 @@ class Park
     @vehicles << vehicle
   end
 
+  def list_adult_attendees
+    adults = @passengers.find_all do |passenger|
+      passenger.adult?
+    end
+    return adults
+  end
+
+  def list_children_attendees
+    adults = @passengers.find_all do |passenger|
+      !passenger.adult?
+    end
+  end
 
 end

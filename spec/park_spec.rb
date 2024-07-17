@@ -5,12 +5,18 @@ require './lib/park'
 
 RSpec.describe Park do
   before(:each) do
+    #Park
     @park_1 = Park.new("Zion", 10)
+    #Vehicles
     @vehicle_1 = Vehicle.new("2001", "Honda", "Civic")
     @vehicle_2 = Vehicle.new("2013", "Chevrolet", "Cruze")
+    #Passengers
     @charlie = Passenger.new({"name" => "Charlie", "age" => 18})
     @taylor = Passenger.new({"name" => "Taylor", "age" => 12}) 
-    @jude = Passenger.new({"name" => "Jude", "age" => 20})       
+    @jude = Passenger.new({"name" => "Jude", "age" => 20}) 
+    @steve = Passenger.new({"name" => "Steve", "age" => 21})
+    @caitlin = Passenger.new({"name" => "Caitlin", "age" => 16}) 
+    @sarah = Passenger.new({"name" => "Sarah", "age" => 25})   
   end
 
   describe "#initialize" do
@@ -68,6 +74,29 @@ RSpec.describe Park do
 
   end
 
+  describe "#list_adult_attendees" do
+    it "will return all adult attendees in an array" do
+      @vehicle_1.add_passenger(@charlie) # adult
+      @vehicle_1.add_passenger(@taylor) # kid
+      @vehicle_1.add_passenger(@caitlin) # kid
+      @vehicle_1.add_passenger(@steve) #adult
+      @park_1.add_vehicle(@vehicle_1)
+
+      @vehicle_2.add_passenger(@jude) #adult
+      @vehicle_2.add_passenger(@sarah) #adult
+      @park_1.add_vehicle(@vehicle_2)
+
+      expect(@park_1.list_adult_attendees).to eq([
+        @charlie,
+        @steve,
+        @jude,
+        @sarah
+      ])
+    end
+
+  end
+
+  describe "#list_children_attendees" do
 
 
 end
