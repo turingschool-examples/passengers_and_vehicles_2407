@@ -25,4 +25,10 @@ RSpec.describe '#Park' do
         expect(@park_2.admission).to eq 10
         expect(@park_3.admission).to eq 10
     end
+
+    it 'lists vehicles in each park' do
+        @park_1.visiting_vehicle(@vehicle = Vehicle.new("2001", "Honda", "Civic"))
+
+        expect(@park_1.park_vehicles).to eq([@vehicle])
+    end
 end
