@@ -46,7 +46,9 @@ RSpec.describe'Passenger' do
         end
 
         it 'will NOT update the @driver status of a Passenger instance if the instance is already a driver' do
-
+            @charlie.drive
+            expect(@charlie.driver).to eq true
+            expect{@charlie.drive}.not_to change{@charlie.driver}
         end
     end
 end
