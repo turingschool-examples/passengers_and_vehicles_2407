@@ -53,5 +53,36 @@ RSpec.describe Park do
         expect(@park_2.list_all_vehicles).to eq(list)
       end
     end
+
+    describe 'add passengers' do 
+      it 'is empty right now' do 
+        expect(@park_1.passengers).to eq([])
+        expect(@park_2.passengers).to eq([])
+      end
+
+      it 'is not empty nomore' do 
+        @park_1.add_passenger(@charlie)
+        @park_1.add_passenger(@taylor)
+        @park_1.add_passenger(@jude)
+        @park_2.add_passenger(@charlie)
+        @park_2.add_passenger(@taylor)
+        @park_2.add_passenger(@jude)
+        expect(@park_1.passengers).to include(@charlie, @taylor, @jude)
+        expect(@park_2.passengers).to include(@charlie, @taylor, @jude)
+      end
+    end
+
+    describe 'list all passengers' do 
+      it 'Returns all passengers' do 
+        @park_1.add_passenger(@charlie)
+        @park_1.add_passenger(@taylor)
+        @park_1.add_passenger(@jude)
+        @park_2.add_passenger(@charlie)
+        @park_2.add_passenger(@taylor)
+        @park_2.add_passenger(@jude)
+        expect(@park_1.list_all_passengers).to eq("Charlie", "Taylor", "Jude")
+        expect(@park_2.list_all_passengers).to eq("Charlie", "Taylor", "Jude")
+      end
+    end
   end
 end
