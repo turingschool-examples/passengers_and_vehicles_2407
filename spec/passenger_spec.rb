@@ -38,14 +38,14 @@ end
     end
   end
 
-  describe "#adult" do 
-    xit 'is an adult' do   
+  describe "#drive" do 
+    xit 'is can drive' do   
       expect(@charlie.drive).to eq true
     end
   end
 
-  describe "#adult" do 
-    xit 'is an adult' do  
+  describe "#driver?" do 
+    xit 'is an driver' do  
       expect(@charlie.driver?).to eq true
       expect(@taylor.driver?).to eq false
     end
