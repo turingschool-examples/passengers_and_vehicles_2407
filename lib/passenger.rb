@@ -18,11 +18,12 @@ class Passenger
     end
 
     def driver?
-        if self.driver == false
-            false
-        else 
-            true
-        end
+        @driver
     end
 
+    def drive
+        if self.driver == false
+            @driver = true
+        end
+    end
 end
