@@ -33,10 +33,16 @@ RSpec.describe Passenger do
     end
 
     describe 'drive' do
-        it 'can test if someone is a driver' do
+        it 'can test if driver? is false by default' do
             expect(@charlie.driver?).to be false    
         end
-    end
+
+        it 'can change driver? to true if they drive' do
+            @charlie.drive
+
+            expect(@charlie.driver?).to be true
+        end
+    end 
 
 
 end
