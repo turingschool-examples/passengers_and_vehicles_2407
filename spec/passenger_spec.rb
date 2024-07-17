@@ -18,8 +18,8 @@ RSpec.describe Passenger do
 
   describe "#adult?" do
     it "returns a boolean" do
-      #https://stackoverflow.com/questions/13371633/rspec-how-to-test-for-a-boolean-return-type
-      expect(@passenger_1.adult?).to be_in([true,false])
+  
+      expect([true, false]).to include(@passenger_1.adult?)
     end
 
   end
