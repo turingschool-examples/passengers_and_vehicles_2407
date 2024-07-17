@@ -6,7 +6,7 @@ class Park
     @name = name
     @price = price
     @vehicles = []
-    @passengers = []
+    @passengers = [] 
     @revenue = 0
 
 
@@ -38,8 +38,16 @@ class Park
   end
 
   def list_children_attendees
+    if @passengers == []
+      return []
+    end
+
     childrens = @passengers.find_all do |passenger|
       !passenger.adult?
+    end
+
+    if childrens.empty?
+      return []
     end
 
     childrens_names = childrens.map do |children|
