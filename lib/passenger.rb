@@ -1,6 +1,6 @@
 class Passenger
 
-  attr_reader :name, :age, :driver
+  attr_reader :name, :age, :driver # may want to refactor this
 
   def initialize(data)
     data.default = "n/a"
@@ -19,6 +19,10 @@ class Passenger
 
   def drive
     @driver = true
+  end
+
+  def driver?
+    @driver
   end
 
 end
