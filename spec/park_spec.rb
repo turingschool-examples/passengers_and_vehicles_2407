@@ -23,5 +23,21 @@ RSpec.describe Park do
       expect(@park_1.admission_price).to eq(50)
       expect(@park_2.admission_price).to eq(100)
     end
+
+    describe 'add_vehicles' do 
+      it 'is empty right now' do 
+        expect(@park_1.vehicles).to eq([])
+        expect(@park_2.vehicles).to eq([])
+      end
+
+      it 'is not empty nomore' do 
+        @park_1.add_vehicles(@vehicle)
+        @park_1.add_vehicles(@vehicle_2)
+        @park_2.add_vehicles(@vehicle)
+        @park_2.add_vehicles(@vehicle_2)
+        expect(@park_1.vehicles).to include(@vehicle, @vehicle_2)
+        expect(@park_2.vehicles).to include(@vehicle, @vehicle_2)
+      end
+    end
   end
 end
