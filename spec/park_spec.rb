@@ -8,6 +8,14 @@ RSpec.describe Park do
         @vehicle1 = Vehicle.new("2001", "Honda", "Civic")
         @vehicle2 = Vehicle.new("2012", "Honda", "Pilot")
         @vehicle3 = Vehicle.new("2023", "Tesla", "Y")
+        @charlie = Passenger.new({"name" => "Charlie", "age" => 18}) 
+        @jude = Passenger.new({"name" => "Jude", "age" => 20})
+        @taylor = Passenger.new({"name" => "Taylor", "age" => 12}) 
+        @thor = Passenger.new({"name" => "Thor", "age" => 1500})
+        @vehicle1.add_passenger(@charlie)
+        @vehicle2.add_passenger(@jude)
+        @vehicle3.add_passenger(@taylor)
+        @vehicle3.add_passenger(@thor)
     end
 
     describe 'initialize' do
@@ -32,6 +40,20 @@ RSpec.describe Park do
             @park.add_vehicle(@vehicle3)
 
             expect(@park.vehicles).to eq [@vehicle1, @vehicle2, @vehicle3]
+        end
+    end
+
+    describe 'passengers in park' do
+        it 'can list all passengers in the park' do
+            @park.add_vehicle(@vehicle1)
+            @park.add_vehicle(@vehicle2)
+            @park.add_vehicle(@vehicle3)
+            @vehicle1.add_passenger(@charlie)
+            @vehicle2.add_passenger(@jude)
+            @vehicle3.add_passenger(@taylor)
+            @vehicle3.add_passenger(@thor)
+
+            expect(@park.all_passengers).to eq [@charlie, @jude, @taylor, @thor]
         end
     end
 
