@@ -1,10 +1,12 @@
 class Passenger
     attr_reader :name,
-                :age
+                :age,
+                :driver
 
     def initialize(passenger_info)
         @name = passenger_info["name"]
         @age = passenger_info["age"]
+        @driver = false
     end
 
     def adult?
@@ -12,6 +14,14 @@ class Passenger
             true
         else 
             false
+        end
+    end
+
+    def driver?
+        if self.driver == false
+            false
+        else 
+            true
         end
     end
 
