@@ -4,6 +4,7 @@ RSpec.describe Passenger do
     before(:each) do
         @charlie = Passenger.new({"name" => "Charlie", "age" => 18}) 
         @taylor = Passenger.new({"name" => "Taylor", "age" => 12})
+
     end
 
     describe '#initialize' do
@@ -24,6 +25,8 @@ RSpec.describe Passenger do
 
     describe 'adult' do
         it 'can be an adult' do
+            bob = Passenger.new()
+
             expect(@charlie.adult?).to be true
         end
 

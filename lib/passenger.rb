@@ -9,8 +9,7 @@ class Passenger
     end
 
     def adult?
-        return false unless @age >= 18
-        true
+        @age >= 18
     end
 
     def driver?
