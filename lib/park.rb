@@ -10,4 +10,14 @@ class Park
   def add_vehicle(vehicle)
     @vehicles << vehicle
   end
+
+  def passengers
+    all_passengers = []
+    @vehicles.each do |vehicle|
+      vehicle.passengers.each do |passenger|
+        all_passengers << passenger
+      end
+    end
+    all_passengers
+  end
 end
