@@ -1,4 +1,4 @@
-require "./lib/passenger"
+require './lib/passenger'
 
 RSpec.describe Passenger do
     before(:each) do
@@ -14,5 +14,10 @@ RSpec.describe Passenger do
     it 'initialize age' do
         expect(@passenger_1.age).to eq(18)
         expect(@passenger_2.age).to eq(12)
+    end
+
+    it 'are they an adult' do
+        expect(@passenger_1.adult?).to be(true)
+        expect(@passenger_2.adult?).to be(false)
     end
 end
