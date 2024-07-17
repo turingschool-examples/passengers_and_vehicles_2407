@@ -55,8 +55,16 @@ RSpec.describe Park do
         @yosemite.head_count(@vehicle_3)
 
         expect(@yosemite.guest_list).to eq([@charlie, @jude, @taylor, @willie])
+    end
 
+    it 'collects admission from adults' do
+        @vehicle_3 = Vehicle.new("1995", "Kawasaki", "KLR-650")
+        @vehicle_3.add_passenger(@willie)
+        @yosemite.enter(@vehicle_3)
+        @yosemite.head_count(@vehicle_3)
+        
 
+        expect(@yosemite.revenue).to eq(60)
 
     end
 end
