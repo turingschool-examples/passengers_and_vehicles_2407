@@ -5,5 +5,14 @@ RSpec.describe Passenger do
         @passenger_1 = Passenger.new('Charlie', 18)
         @passenger_2 = Passenger.new('Taylor', 12)
     end
-    
+
+    it 'initialize name' do
+        expect(@passenger_1.name).to eq('Charlie')
+        expect(@passenger_2.name).to eq('Taylor')
+    end
+
+    it 'initialize age' do
+        expect(@passenger_1.age).to eq(18)
+        expect(@passenger_2.age).to eq(12)
+    end
 end
