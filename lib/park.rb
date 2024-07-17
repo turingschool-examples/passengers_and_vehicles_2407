@@ -10,6 +10,6 @@ class Park
 
     def initialize(name, admission)
         @name = name
-        @admission = name
+        @admission = admission
     end
 end

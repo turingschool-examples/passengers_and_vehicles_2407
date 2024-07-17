@@ -21,6 +21,8 @@ RSpec.describe '#Park' do
     end
 
     it 'has an admission price' do
-
+        expect(@park_1.admission).to eq 20
+        expect(@park_2.admission).to eq 10
+        expect(@park_3.admission).to eq 10
     end
 end
