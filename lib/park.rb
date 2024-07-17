@@ -10,4 +10,10 @@ attr_reader :name, :admission_price, :vehicles
   def add_vehicles(vehicles)
     @vehicles << vehicles
   end
+
+  def list_all_vehicles
+    @vehicles.map do |vehicle|
+      "year: #{vehicle.year}, make: #{vehicle.make}, model: #{vehicle.model}"
+    end
+  end
 end
