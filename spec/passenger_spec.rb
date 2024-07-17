@@ -20,5 +20,9 @@ RSpec.describe Passenger do
         expect(@taylor.adult?).to be false
     end
 
+    it 'can determine if a driver' do
+        expect(charlie.driver?).to be false
+    end
+
 
 end
