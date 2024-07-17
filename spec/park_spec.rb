@@ -29,11 +29,11 @@ RSpec.describe 'Park' do
         end
 
         it 'will hold a vehicles argument that is initialized as an empty array' do
-            expect(@park.vehicles).to eq {}
+            expect(@park.vehicles).to eq ({})
         end
 
         it 'will hold a passengers argument that is initialized as an empty array' do
-            expect(@park.passengers).to eq {}
+            expect(@park.passengers).to eq ({})
         end
     end
 
