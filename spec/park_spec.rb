@@ -47,11 +47,11 @@ RSpec.describe 'Park' do
 
     describe '#admit()' do
         it 'will add the vehicle in the argument to the @vehicles array' do
-            
+            expect {@park.admit(@vehilcle)}.to change {@park.vehicles.length}.from(0).to(1)
         end
 
         it 'will add the passengeres of the vehicle in the arument to the @passengers array' do
-
+            expect {@park.admit(@vehilcle)}.to change {@park.passengers.length}.from(0).to(4)
         end
     end
 
