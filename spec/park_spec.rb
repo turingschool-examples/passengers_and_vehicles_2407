@@ -28,8 +28,12 @@ RSpec.describe 'Park' do
             expect(@park.admission_price).to eq "$25"
         end
 
-        it 'will hold a vehicles argument that is initialized as an empty array' do
+        it 'will hold a vehicles attribute that is initialized as an empty array' do
             expect(@park.vehicles).to eq ({})
+        end
+
+        it 'will hold a passengers attribute that is initialized as an empty array' do
+            expect(@park.passengers).to eq ({})
         end
 
         it 'will hold a passengers argument that is initialized as an empty array' do
