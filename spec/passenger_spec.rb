@@ -5,7 +5,7 @@ RSpec.configure do |config|
     config.formatter = :documentation
     end
 
-RSpec.describe '#passenger' do
+RSpec.describe '#Passenger' do
     before(:each)do
     @charlie = Passenger.new({"name" => "Charlie", "age" => 18})
     @taylor = Passenger.new({"name" => "Taylor", "age" => 12})
