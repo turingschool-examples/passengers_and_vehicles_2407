@@ -109,4 +109,17 @@ RSpec.describe Park do
             expect(@park_2.collected_admissions).to eq 150
         end
     end
+
+    describe "#analyitics" do
+        it 'can list all patrons of the park' do
+        end
+
+        it 'can list all adults in the park' do
+        end
+
+        it 'can list all minors in the park' do
+        end
+
+        it 'can list any list alphabetically' do
+        end
 end
