@@ -23,11 +23,10 @@ RSpec.describe Vehicle do
     expect(@vehicle.speeding?).to eq(false)
     @vehicle.speed
     expect(@vehicle.speeding?).to eq(true)
-
   end
 
-  xit 'can show vehicle passengers' do
-
+  it 'can show vehicle passengers' do
+    expect(@vehicle.passengers).to eq([])
   end
   
   xit 'can count number of adults' do 
