@@ -20,4 +20,9 @@ class Vehicle
     def add_passenger(passenger)
         @passengers << passenger
     end
+
+    def num_adults
+        adults = @passengers.group_by { |passenger| passenger.adult?}
+        adults.count
+    end
 end
