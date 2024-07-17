@@ -42,21 +42,22 @@ RSpec.describe 'Park' do
 
         it 'will hold a revenue attribute that is initialized as 0' do
             expect(@park.revenue).to eq 0
+#require'pry';binding.pry
         end
     end
 
     describe '#admit()' do
         it 'will add the vehicle in the argument to the @vehicles array' do
-            expect {@park.admit(@vehilcle)}.to change {@park.vehicles.length}.from(0).to(1)
+            expect {@park.admit(@vehicle)}.to change {@park.vehicles.length}.from(0).to(1)
         end
         it 'will use #admit_passengers as helper method conjunctivley' do
-            expect {@park.admit(@vehilcle)}.to change {@park.passengers.length}.from(0).to(4)
+            expect {@park.admit(@vehicle)}.to change {@park.passengers.length}.from(0).to(4)
         end
     end
-    
-    describe '#admit_passengers' do
+
+    describe '#admit_passengers()' do
         it 'will add the passengers of the vehicle in the argument to the @passengers array' do
-            expect {@park.admit(@vehilcle)}.to change {@park.passengers.length}.from(0).to(4)
+            expect {@park.admit_passengers(@vehicle)}.to change{@park.passengers.length}.from(0).to(4)
         end
     end
 

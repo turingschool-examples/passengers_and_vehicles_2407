@@ -18,6 +18,13 @@ class Park
 
     def admit(vehicle)
         @vehicles << vehicle
+        admit_passengers(vehicle)
+    end
+
+    def admit_passengers(vehicle)
+        vehicle.passengers.each do |passenger|
+            @passengers << passengers
+        end
     end
 
     def generate_revenue
