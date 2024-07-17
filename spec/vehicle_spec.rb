@@ -5,6 +5,9 @@ require './lib/vehicle'
 RSpec.describe Vehicle do
   before(:each) do
     @vehicle_1 = Vehicle.new("2001", "Honda", "Civic")
+    @charlie = Passenger.new({"name" => "Charlie", "age" => 18})
+    @taylor = Passenger.new({"name" => "Taylor", "age" => 12}) 
+    @jude = Passenger.new({"name" => "Jude", "age" => 20})       
   end
 
   describe "#initialize" do
@@ -13,6 +16,7 @@ RSpec.describe Vehicle do
       expect(@vehicle_1.year).to eq("2001")
       expect(@vehicle_1.make).to eq("Honda")
       expect(@vehicle_1.model).to eq("Civic")
+      expect(@vehicle_1.passengers).to eq([])
     end
 
   end
@@ -38,6 +42,23 @@ RSpec.describe Vehicle do
       expect(@vehicle_1.speeding?).to eq(true)
     
     end
+  end
+
+  describe "#add_passenger" do
+    it "can add passengers objects to the vehicle" do
+
+      expect(@charlie).to be_an_instance_of(Passenger)
+      expect(@jude).to be_an_instance_of(Passenger)
+      expect(@taylor).to be_an_instance_of(Passenger)
+
+      @vehicle_1.add_passenger(@charlie)
+      @vehicle_1.add_passenger(@jude)
+      @vehicle_1.add_passenger(@taylor)
+
+      expect(@vehicle_1.passengers).to eq([@charlie, @jude, @taylor])
+
+    end
+
   end
 
 
