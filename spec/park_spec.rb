@@ -67,7 +67,8 @@ RSpec.describe 'Park' do
         end
 
         it 'creates the revenue figure by charging the admission price to every adult included in the passenger list' do
-
+            @park.admit(@vehicle)
+            expect{@park.generate_revenue}.to change{@park.revenue}.from(0).to(50)
         end
     end
 end
