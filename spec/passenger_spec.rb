@@ -10,5 +10,10 @@ RSpec.describe Passenger do
         expect(@charlie).to be_instance_of(Passenger)
     end 
 
+    it 'can retrieve attributes' do
+        expect(@charlie.name).to eq("Charlie")
+        expect(@taylor.name).to eq("Taylor")
+    end
+
 
 end
