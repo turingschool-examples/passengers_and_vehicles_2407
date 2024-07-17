@@ -26,6 +26,10 @@ RSpec.describe Passenger do
         it 'can be an adult' do
             expect(@charlie.adult?).to be true
         end
+
+        it 'can not be an adult' do
+            expect(@taylor.adult?).to be false
+        end
     end
 
 
