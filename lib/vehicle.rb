@@ -5,6 +5,10 @@ class Vehicle
     @year = year
     @make = make
     @model = model
+    @speeding = false
+  end
 
+  def speeding?
+    @speeding
   end
 end
