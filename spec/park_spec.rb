@@ -65,9 +65,18 @@ RSpec.describe Park do
             @park.collect_fee(@vehicle1)
             @park.collect_fee(@vehicle2)
             @park.collect_fee(@vehicle3)
-            
+
             expect(@park.revenue_collected).to eq 150
         end
     end
 
+    describe 'passenger list' do
+        it 'can list all adult passengers in abc order' do
+            @park.add_vehicle(@vehicle1)
+            @park.add_vehicle(@vehicle2)
+            @park.add_vehicle(@vehicle3)
+
+            expect(@park.list_adults).to eq ([@charlie, @jude, @thor])
+        end
+    end
 end
