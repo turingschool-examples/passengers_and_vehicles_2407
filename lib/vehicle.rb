@@ -6,6 +6,18 @@ class Vehicle
         @year = year
         @make = make
         @model = model
+        @speed = false
+    end
+    
+    def speed
+        @speed = true
     end
 
+    def speeding?
+        if @speed == false
+            false
+        elsif @speed == true
+            true
+        end
+    end
 end
