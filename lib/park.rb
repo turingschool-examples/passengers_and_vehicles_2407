@@ -12,8 +12,6 @@ class Park
     end
 
     def all_passengers
-        # list all of the passengers from all of the vehicles
-        # require 'pry'; binding.pry
         all_passengers = @vehicles.map { |vehicle| vehicle.passengers }
         all_passengers.flatten
     end

@@ -53,4 +53,9 @@ RSpec.describe Park do
         end
     end
 
+    describe 'revenue collected' do
+        it 'sets revenue collected to 0'
+            expect(@park.revenue_collected).to eq 0
+    end
+
 end
