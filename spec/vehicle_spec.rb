@@ -37,7 +37,16 @@ RSpec.describe 'Vehicle' do
     end
 
     describe '#speed' do
+        it 'will update the speeding attribute from false to true' do
+            expect(@vehicle.speeding?).to eq false
+            expect{@vehicle.speed}.to change{@vehicle.speeding}.from(false).to(true)
+        end
 
+        it 'will NOT update the speeding attribute if it is set to true before the method is run' do
+            @vehicle.speed
+            expect(@vehicle.speeding?).to eq true
+            expect{@vehicle.speed}.not_to change{@vehicle.speeding}
+        end
     end
 
     describe '#add_passenger()' do
