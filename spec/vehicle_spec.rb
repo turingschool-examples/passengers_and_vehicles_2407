@@ -56,11 +56,24 @@ RSpec.describe Vehicle do
       @vehicle_1.add_passenger(@taylor)
 
       expect(@vehicle_1.passengers).to eq([@charlie, @jude, @taylor])
-
     end
 
   end
 
+  describe "#num_adults" do
+    it "will return 0 if no passengers are in the vehicle" do
+      expect(@vehicle_1.passengers).to eq([])
+      expect(@vehicle_1.num_adults).to eq(0)
+    end
 
+    it "will return a count of all adult passengers in the vehicle" do
+      @vehicle_1.add_passenger(@charlie)
+      @vehicle_1.add_passenger(@jude)
+      @vehicle_1.add_passenger(@taylor)
+
+      expect(@vehicle_1.num_adults).to eq(2)
+    end
+
+  end
 
 end
