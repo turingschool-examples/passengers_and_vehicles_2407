@@ -122,10 +122,10 @@ RSpec.describe Park do
 
         it 'can list all patrons of the park' do
             expect(@park_1.passengers.count).to eq 6
-            p @park_1.print_list("Patrons")
+            p @park_1.get_list("Patrons")
             # expect [Charlie, Taylor, George, George, Taylor, Cedric]
             expect(@park_2.passengers.count).to eq 9
-            @park_2.print_list('Patrons')
+            p @park_2.get_list('Patrons')
             # expect [Charlie, Taylor, George, George, Taylor, Cedric, George, Taylor, Cedric]
         end
 
@@ -154,6 +154,9 @@ RSpec.describe Park do
         end
 
         it 'can list any list alphabetically' do
+            expect(@park_1.sort_list("Patrons")).to eq ["Cedric", "Charlie", "George", "George", "Taylor", "Taylor"]
+            expect(@park_1.sort_list("Adults")).to eq ["Charlie", "George", "George"]
+            expect(@park_1.sort_list("Children")).to eq ["Cedric", "Taylor", "Taylor"]
         end
     end
 end

@@ -44,13 +44,22 @@ class Park
         end
     end
 
-    def print_list(list)
+    def get_list(list)
         if list == 'Children'
-            p @children
+            @children
         elsif list == 'Adults'
-            p @adults
+            @adults
         else
-            p @patrons
+            @patrons
+        end
+    end
+
+    def sort_list(list)
+        sort_list = get_list(list) 
+        sort_list.sort do |name_1, name_2|
+            name_1.capitalize()
+            name_2.capitalize()
+            name_1 <=> name_2
         end
     end
 end
