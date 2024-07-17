@@ -1,6 +1,6 @@
 class Passenger
 
-  attr_reader :name, :age, :driver # may want to refactor this
+  attr_reader :name, :age
 
   def initialize(data)
     data.default = "n/a"

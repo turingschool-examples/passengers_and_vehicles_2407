@@ -31,6 +31,10 @@ RSpec.describe Vehicle do
       expect(@vehicle_1.speeding?).to eq(true)
     end
 
+    it "returns a boolean" do
+      expect([true, false]).to include(@vehicle_1.speeding?)
+    end
+
   end
 
   describe "#speed" do

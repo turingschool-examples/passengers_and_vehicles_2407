@@ -29,18 +29,18 @@ RSpec.describe Passenger do
   end
 
   describe "#drive" do
-    it "sets drive attribute to false by defaul when passenger is created" do
-      expect(@passenger_1.driver).to eq(false)
-      expect(@passenger_2.driver).to eq(false)
-    end
-
     it "can set the drive attribute to true" do
       @passenger_1.drive
-      expect(@passenger_1.driver).to eq(true)
+      expect(@passenger_1.driver?).to eq(true)
     end
   end
 
   describe "#driver?" do
+    it "sets drive attribute to false by default when passenger is created" do
+      expect(@passenger_1.driver?).to eq(false)
+      expect(@passenger_2.driver?).to eq(false)
+    end
+
     it "returns a boolean" do
       expect([true, false]).to include(@passenger_1.driver?)
     end
