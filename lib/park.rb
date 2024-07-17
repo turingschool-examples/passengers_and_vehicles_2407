@@ -6,4 +6,8 @@ class Park
         @admission = admission
         @vehicles = []
     end
+
+    def add_vehicle(vehicle)
+        @vehicles << vehicle
+    end
 end
