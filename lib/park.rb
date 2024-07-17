@@ -16,6 +16,10 @@ class Park
         @revenue = 0
     end
 
+    def admit(vehicle)
+        @vehicles << vehicle
+    end
+
     def generate_revenue
         @revenue
     end

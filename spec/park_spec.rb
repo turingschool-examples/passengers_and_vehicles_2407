@@ -49,8 +49,13 @@ RSpec.describe 'Park' do
         it 'will add the vehicle in the argument to the @vehicles array' do
             expect {@park.admit(@vehilcle)}.to change {@park.vehicles.length}.from(0).to(1)
         end
-
-        it 'will add the passengeres of the vehicle in the arument to the @passengers array' do
+        it 'will use #admit_passengers as helper method conjunctivley' do
+            expect {@park.admit(@vehilcle)}.to change {@park.passengers.length}.from(0).to(4)
+        end
+    end
+    
+    describe '#admit_passengers' do
+        it 'will add the passengers of the vehicle in the argument to the @passengers array' do
             expect {@park.admit(@vehilcle)}.to change {@park.passengers.length}.from(0).to(4)
         end
     end
