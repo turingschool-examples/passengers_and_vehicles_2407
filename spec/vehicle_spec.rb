@@ -7,6 +7,8 @@ RSpec.describe Vehicle do
     end
 
     describe 'initialize' do
-        expect(@vehicle).to be_an_instance_of(Vehicle)
+        it 'can exists' do
+            expect(@vehicle).to be_an_instance_of(Vehicle)
+        end
     end
 end
