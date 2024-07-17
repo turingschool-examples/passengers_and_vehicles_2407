@@ -13,13 +13,17 @@ class Park
     end
 
     def people_in_park
-        passenger_names = nil
-        passengers_in_vehicle = nil
-        @vehicles_in_park.each do |vehicle|
-            passengers_in_vehicle = vehicle.passengers
-        end
-        passengers_in_vehicle.map do |passenger|
-            passenger_names = passenger.name
+        if @vehicles_in_park.empty? == false
+            passenger_names = nil
+            passengers_in_vehicle = nil
+            @vehicles_in_park.each do |vehicle|
+                passengers_in_vehicle = vehicle.passengers
+            end
+            passengers_in_vehicle.map do |passenger|
+                passenger_names = passenger.name
+            end
+        elsif @vehicles_in_park.empty? == true
+            return nil
         end
     end
 end

@@ -49,6 +49,7 @@ RSpec.describe Park do
         it 'lists names of passengers in the park' do
             @flatwoods.vehicle_enters(@vehicle)
             expect(@flatwoods.people_in_park).to eq(["Charlie", "Jude", "Taylor"])
+            expect(@hillsborough.people_in_park).to eq(nil)
         end
     end
 end
