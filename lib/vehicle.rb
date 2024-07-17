@@ -3,9 +3,18 @@ class Vehicle
                 :make,
                 :model
 
-    def initialize(vehicle_details)
-        @year = vehicle_details[:year]
-        @make = vehicle_details[:make]
-        @model = vehicle_details[:model]
+    def initialize(year, make, model)
+        @year = year
+        @make = make
+        @model = model
+        @speeding = false
+    end
+
+    def speed
+        @speeding = true
+    end
+
+    def speeding?
+        @speeding
     end
 end
