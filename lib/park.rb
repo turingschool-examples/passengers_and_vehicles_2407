@@ -17,5 +17,12 @@ class Park
 
     def vehicle_pass(vehicle)
         @vehicles << vehicle
+        add_passengers(vehicle)
+    end
+
+    def add_passengers(vehicle)
+        vehicle.passengers.each do |passenger|
+            @passengers << passenger
+        end
     end
 end

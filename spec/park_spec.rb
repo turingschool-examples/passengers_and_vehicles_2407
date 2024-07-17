@@ -18,9 +18,9 @@ RSpec.describe Park do
         @vehicle_1.add_passenger(@george)
 
         @vehicle_2 = Vehicle.new('2013', 'Dodge', 'Dart')
-        @vehicle_1.add_passenger(@george)
-        @vehicle_1.add_passenger(@taylor)
-        @vehicle_1.add_passenger(@cedric)
+        @vehicle_2.add_passenger(@george)
+        @vehicle_2.add_passenger(@taylor)
+        @vehicle_2.add_passenger(@cedric)
     end
 
     describe "#initialize" do
@@ -41,7 +41,7 @@ RSpec.describe Park do
         end
     end
 
-    describe "#track_vehicles" do
+    describe "#vehicle_pass" do
         it 'can add vehicles to the vehicles array' do
             @park_1.vehicle_pass(@vehicle_1)
             expect(@park_1.vehicles).to include Vehicle
@@ -50,6 +50,11 @@ RSpec.describe Park do
     end
 
     describe "#track_passengers" do
+        it 'adds the passengers of the vehicle to passengers array' do
+            @park_1.vehicle_pass(@vehicle_1)
+            expect(@park_1.vehicles.count).to eq 1
+            expect(@park_1.passengers.count).to eq 3
+        end
     end
 
     describe "#track_revenue" do
