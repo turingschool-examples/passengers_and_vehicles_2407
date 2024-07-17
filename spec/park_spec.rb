@@ -36,8 +36,8 @@ RSpec.describe 'Park' do
             expect(@park.passengers).to eq ({})
         end
 
-        it 'will hold a passengers argument that is initialized as an empty array' do
-            expect(@park.passengers).to eq ({})
+        it 'will hold a revenue attribute that is initialized as 0' do
+            expect(@park.revenue).to eq 0
         end
     end
 
