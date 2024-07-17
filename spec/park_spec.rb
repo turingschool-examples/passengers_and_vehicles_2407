@@ -66,10 +66,9 @@ RSpec.describe Park do
         @vehicle_3.add_passenger(@willie)
         @yosemite.enter(@vehicle_3)
         @yosemite.head_count(@vehicle_3)
-        
+
         @yosemite.collect_fee(@vehicle_3)
 
         expect(@yosemite.revenue).to eq(60)
-
     end
 end

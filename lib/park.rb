@@ -20,5 +20,15 @@ class Park
         end
     end
 
-   
+    def collect_fee(vehicle)
+        chargeable_adults = 0
+        vehicle.passengers.each do |passenger|   
+            if passenger.adult?
+                chargeable_adults += 1
+            end
+        end
+        fee = @price * chargeable_adults
+        @revenue << fee
+    end
+
 end
