@@ -17,4 +17,8 @@ RSpec.describe Vehicle do
 
         expect(@vehicle.speeding?).to be true
     end
+
+    it 'can contain passengers' do
+        expect(@vehicle.passengers).to eq ([])
+    end
 end
