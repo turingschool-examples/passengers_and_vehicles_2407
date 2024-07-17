@@ -1,10 +1,11 @@
 class Park
-    attr_reader :name, :admission, :vehicles
+    attr_reader :name, :admission, :vehicles, :revenue_collected
 
     def initialize(name, admission)
         @name = name
         @admission = admission
         @vehicles = []
+        @revenue_collected = 0
     end
 
     def add_vehicle(vehicle)
