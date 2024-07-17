@@ -32,18 +32,43 @@ RSpec.describe Vehicle do
 
     describe "#passengers" do
         before(:each) do
-            charlie = Passenger.new({"name" => "Charlie", "age" => 18})  
-            jude = Passenger.new({"name" => "Jude", "age" => 20})  
-            taylor = Passenger.new({"name" => "Taylor", "age" => 12})
+            @charlie = Passenger.new({"name" => "Charlie", "age" => 18})  
+            @jude = Passenger.new({"name" => "Jude", "age" => 20})  
+            @taylor = Passenger.new({"name" => "Taylor", "age" => 12})
         end
         
         it 'has a list of passengers' do
+            expect(@vehicle.passengers).to eq []
         end
 
-        it 'can add passengers to the list' do
+        it 'can add a passenger to the list' do
+            expect(@vehicle.passengers).to eq []
+            @vehicle.add_passenger(@charlie)
+            expect(@vehicle.passengers).to include Passenger
+            expect(@vehicle.passengers.count).to eq 1
         end
 
+        it 'can add multiple passengers to the list' do
+            expect(@vehicle.passengers).to eq []
+            @vehicle.add_passenger(@charlie)
+            @vehicle.add_passenger(@jude)
+            @vehicle.add_passenger(@taylor)
+            
+            expect(@vehicle.passengers).to include Passenger
+            expect(@vehicle.passengers.count).to eq 3
+            
+            names = []
+            @vehicle.passengers.find_all do |passenger|
+                names << passenger.name
+            end
+            expect(names).to eq ['Charlie', 'Jude', 'Taylor']
+        end
         it 'can track the number of adults' do
+            @vehicle.add_passenger(@charlie)
+            @vehicle.add_passenger(@jude)
+            @vehicle.add_passenger(@taylor)
+            
+            expect(@vehicle.num_adults).to eq 2
         end
     end
 end
