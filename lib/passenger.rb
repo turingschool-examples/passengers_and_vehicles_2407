@@ -1,12 +1,14 @@
 class Passenger
 
-    attr_reader :name,
-                :age
+    # attr_reader :name,
+    #             :age
 
 
-    def initialize(name, age)
-        @name = name
-        @age = age
-    end
-    
+    # def initialize{
+    #     :name => "name"
+    #     :age => "age"
+    # }
+
+    # end
+
 end
