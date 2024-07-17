@@ -4,11 +4,13 @@ class Passenger
                 :name,
                 :age,
                 :adult,
-                :driver
+                :driver,
+                :drive
 
-    def initialize(passenger_info) 
+    def initialize(passenger_info, driver = false) 
         @name = passenger_info[:name.to_s]
         @age = passenger_info[:age.to_s]
+        @driver = driver
     end
 
     def adult?
@@ -18,11 +20,16 @@ class Passenger
             true
         end
     end
+
     def driver?
-        false
+        @driver
     end
-    # def drive
-    #     @driver? = true
-    # end
+    
+    def drive
+        @driver = true
+        if @age < 18
+            @driver = false
+        end
+    end
 
 end

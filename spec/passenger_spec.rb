@@ -33,4 +33,11 @@ RSpec.describe '#passenger' do
         @charlie.driver?
         expect(@charlie.driver?).to eq false
     end
-end
+
+    it 'can be driver if drive method used' do
+        @charlie.drive
+        @taylor.drive
+        expect(@charlie.driver?).to eq true
+        expect(@taylor.driver?).to eq false
+    end
+end 
