@@ -57,6 +57,14 @@ RSpec.describe Park do
         it 'sets revenue collected to 0' do
             expect(@park.revenue_collected).to eq 0
         end
+
+        it 'collects fee for each adult in the park' do
+            @park.add_vehicle(@vehicle1)
+            @park.add_vehicle(@vehicle2)
+            @park.add_vehicle(@vehicle3)
+
+            expect(@park.revenue_collected).to eq 150
+        end
     end
 
 end
