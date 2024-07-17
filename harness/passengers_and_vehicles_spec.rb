@@ -1,5 +1,7 @@
 require 'rspec'
+require './lib/vehicle'
 require './lib/passenger'
+require './lib/park'
 
 RSpec.configure do |config|
   config.formatter = :documentation
@@ -20,7 +22,7 @@ RSpec.describe 'Passenger and Vehicles Spec Harness' do
       expect(@charlie).to respond_to(:name).with(0).argument
       expect(@charlie.name).to eq("Charlie")
       expect(@charlie).to respond_to(:age).with(0).argument
-      expect(@charlie.name).to eq(18)
+      expect(@charlie.age).to eq(18)
     end
 
     it '2. Passenger #adult?' do
