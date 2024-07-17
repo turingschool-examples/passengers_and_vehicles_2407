@@ -31,6 +31,7 @@ RSpec.describe Passenger do
   describe "#drive?" do
     it "drive is default set to false" do
       expect(@passenger_1.drive).to eq(false)
+      expect(@passenger_2.drive).to eq(false)
     end
 
 
