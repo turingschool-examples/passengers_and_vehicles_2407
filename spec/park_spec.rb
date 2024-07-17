@@ -11,6 +11,11 @@ RSpec.describe Park do
         it 'can exists' do
             expect(@park).to be_an_instance_of(Park)
         end
+
+        it 'has attributes' do
+            expect(@park.name).to be "Yellowstone"
+            expect(@park.admission).to be 50
+        end
     end
 
 end
