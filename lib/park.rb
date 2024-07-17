@@ -17,7 +17,7 @@ class Park
         all_passengers.flatten
     end
 
-    def collect_fee(vehicle)
+    def collect_fee
         all_passengers = @vehicles.map { |vehicle| vehicle.passengers }
         all_passengers = all_passengers.flatten
         adults = all_passengers.select { |passenger| passenger.adult?}
@@ -34,8 +34,7 @@ class Park
     def list_minors
         all_passengers = @vehicles.map { |vehicle| vehicle.passengers }
         all_passengers = all_passengers.flatten
-    #    list all that are not minors
         minors = all_passengers.select { |passenger| !passenger.adult?}
-        minors_in_order = minors.sort_by { |adult| adult.name } 
+        minors_in_order = minors.sort_by { |minor| minor.name } 
     end
 end
