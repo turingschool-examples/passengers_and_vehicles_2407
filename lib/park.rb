@@ -1,11 +1,12 @@
 class Park
-    attr_reader :name, :price, :entrance_list, :guest_list
+    attr_reader :name, :price, :entrance_list, :guest_list, :revenue
 
     def initialize(name, price)
         @name = name
         @price = price
         @entrance_list = []
         @guest_list = []
+        @revenue = 0
     end
 
     def enter(vehicle)
