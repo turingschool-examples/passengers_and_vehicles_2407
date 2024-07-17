@@ -4,7 +4,7 @@ require './lib/park'
 
 RSpec.describe Park do
     before(:each) do
-        @park = Park.new
+        @park = Park.new("Yellowstone", 50)
     end
 
     describe 'initialize' do
@@ -13,7 +13,7 @@ RSpec.describe Park do
         end
 
         it 'has attributes' do
-            expect(@park.name).to be "Yellowstone"
+            expect(@park.name).to eq "Yellowstone"
             expect(@park.admission).to be 50
         end
     end
