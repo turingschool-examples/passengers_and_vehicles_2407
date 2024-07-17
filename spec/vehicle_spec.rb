@@ -21,6 +21,8 @@ RSpec.describe Vehicle do
 
   it 'can see if driver is speeding' do
     expect(@vehicle.speeding?).to eq(false)
+    @vehicle.speed
+    expect(@vehicle.speeding?).to eq(true)
 
   end
 
