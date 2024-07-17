@@ -2,18 +2,25 @@ require "./lib/passenger"
 
 RSpec.describe Passenger do
     before(:each) do
-        @passenger = Passenger.new({"name" => "Charlie", "age" => 18}) 
+        @charlie = Passenger.new({"name" => "Charlie", "age" => 18}) 
+        @taylor = Passenger.new({"name" => "Taylor", "age" => 12})
     end
 
     describe '#initialize' do
         it 'exists' do
-            expect(@passenger).to be_an_instance_of(Passenger)
+            expect(@charlie).to be_an_instance_of(Passenger)
         end
 
         it 'has parameters' do
-            # require 'pry'; binding.pry
-            expect(@passenger.name).to eq("Charlie")
-            expect(@passenger.age).to eq(18)
+            expect(@charlie.name).to eq("Charlie")
+            expect(@charlie.age).to eq(18)
+        end
+
+        it 'can have a new name' do
+            expect(@taylor.name).to eq("Taylor")
+            expect(@taylor.age).to eq(12)
         end
     end
+
+
 end
