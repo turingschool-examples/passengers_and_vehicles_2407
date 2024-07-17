@@ -31,9 +31,10 @@ class Park
   end
 
   def list_children_attendees
-    adults = @passengers.find_all do |passenger|
+    children = @passengers.find_all do |passenger|
       !passenger.adult?
     end
+    children
   end
 
 end

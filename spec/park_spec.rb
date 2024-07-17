@@ -97,6 +97,24 @@ RSpec.describe Park do
   end
 
   describe "#list_children_attendees" do
+    it "will return all children attendees in an array" do
+      @vehicle_1.add_passenger(@charlie) # adult
+      @vehicle_1.add_passenger(@taylor) # kid
+      @vehicle_1.add_passenger(@caitlin) # kid
+      @vehicle_1.add_passenger(@steve) #adult
+      @park_1.add_vehicle(@vehicle_1)
+
+      @vehicle_2.add_passenger(@jude) #adult
+      @vehicle_2.add_passenger(@sarah) #adult
+      @park_1.add_vehicle(@vehicle_2)
+
+      expect(@park_1.list_children_attendees).to eq([
+        @taylor,
+        @caitlin
+      ])
+    end
+
+  end
 
 
 end
