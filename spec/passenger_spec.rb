@@ -28,7 +28,7 @@ RSpec.describe Passenger do
     expect(@charlie.driver?).to eq(false)
     expect(@taylor.driver?).to eq(false)
 
-    # @charlie.drive
-    # expect(@charlie.driver?).to eq(true)
+    @charlie.drive
+    expect(@charlie.driver?).to eq(true)
   end
 end
