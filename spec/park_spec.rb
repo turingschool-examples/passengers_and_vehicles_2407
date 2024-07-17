@@ -11,5 +11,24 @@ RSpec.describe Park do
     @jude = Passenger.new({"name" => "Jude", "age" => 20})
     @taylor = Passenger.new({"name" => "Taylor", "age" => 12})
   end
-  
+
+  it 'exists' do 
+
+  end
+
+  it 'has attributes' do
+
+  end
+
+  it 'can list all vehicles that entered the park' do
+
+  end
+
+  it 'can list all passengers taht entered the park' do 
+
+  end
+
+  it 'can calculate generated revenue' do
+    
+  end
 end
