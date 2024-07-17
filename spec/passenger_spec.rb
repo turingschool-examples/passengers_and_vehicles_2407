@@ -1,21 +1,15 @@
 require "./lib/passenger"
 
-RSpec.configure do |config|
-  config.formatter = :documentation
-end
-
 RSpec.describe Passenger do
   before(:each) do
     @charlie = Passenger.new({"name" => "Charlie", "age" => 18})    
-    @taylor = Passenger.new({"name" => "Taylor", "age" => 12})   
+    @taylor = Passenger.new({"name" => "Taylor", "age" => 12})  
 end
 
-  describe '#initialize' do
     it 'can initialize' do
-      expect(@charlie).to be_an_instance_of(Passenger)
-      expect(@taylor).to be_an_instance_of(Passenger)
+      expect(@charlie).to be_a_instance_of(Passenger)
+      expect(@taylor).to be_a_instance_of(Passenger)
     end
-  end
 
   describe "#name" do 
     it 'has a name' do   
@@ -25,29 +19,25 @@ end
   end
 
   describe "#age" do 
-    xit 'has an age' do 
+    it 'has an age' do 
       expect(@charlie.age).to eq(18)
-      expect(@charlie.age).to eq(12)
+      expect(@taylor.age).to eq(12)
     end
   end
 
   describe "#adult" do 
-    xit 'is an adult' do 
-      expect(@charlie.adult?).to eq true
-      expect(@taylor.adult?).to eq false
+    it 'is an adult' do 
+      expect(@charlie.adult?).to eq(true)
+      expect(@taylor.adult?).to eq(false)
     end
   end
 
   describe "#drive" do 
-    xit 'is can drive' do   
-      expect(@charlie.drive).to eq true
-    end
-  end
-
-  describe "#driver?" do 
-    xit 'is an driver' do  
-      expect(@charlie.driver?).to eq true
-      expect(@taylor.driver?).to eq false
+    it 'is can drive' do   
+      @charlie.drive
+      expect(@charlie.drive).to eq(true)
+      expect(@charlie.driver?).to eq(true)
+      expect(@taylor.driver?).to eq(false)
     end
   end
 end
