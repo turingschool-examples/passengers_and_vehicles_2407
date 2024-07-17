@@ -39,10 +39,16 @@ RSpec.describe Park do
             @flatwoods.vehicle_enters(@vehicle)
             expect(@flatwoods.vehicles_in_park).to eq([@vehicle])
         end
-        it 'lists all passengers that entered the park' do
-            # require 'pry'; binding.pry
+        it 'shows there are people in the park' do
             @flatwoods.vehicle_enters(@vehicle)
             expect(@flatwoods.vehicles_in_park[0].passengers.count).to eq(3)
+        end
+    end
+
+    describe '#people_in_park' do
+        it 'lists names of passengers in the park' do
+            @flatwoods.vehicle_enters(@vehicle)
+            expect(@flatwoods.people_in_park).to eq(["Charlie", "Jude", "Taylor"])
         end
     end
 end
