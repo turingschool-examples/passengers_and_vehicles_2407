@@ -16,4 +16,10 @@ class Vehicle
     def speeding?
         @speeding
     end
+
+    def speed
+        if @speeding == false
+            @speeding = true
+        end
+    end
 end
