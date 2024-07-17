@@ -70,7 +70,7 @@ RSpec.describe 'Vehicle' do
             @vehicle.add_passenger(@charlie)
             @vehicle.add_passenger(@jude)
             @vehicle.add_passenger(@taylor)
-            
+
             expect(@vehicle.passengers.length).to eq 3
             expect(@vehicle.passengers[0].name).to eq "Charlie"
             expect(@vehicle.passengers[1].age).to eq 20 
@@ -79,6 +79,12 @@ RSpec.describe 'Vehicle' do
     end
     
     describe '#num_adults' do
-
+        it 'will return the amount of adults in the passenger list based on the #adult? method in the Passenger class' do
+            @vehicle.add_passenger(@charlie)
+            @vehicle.add_passenger(@jude)
+            @vehicle.add_passenger(@taylor)
+            
+            expect(@vehilce.num_adults).to eq 2
+        end
     end
 end
