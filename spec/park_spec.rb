@@ -3,6 +3,7 @@ require './lib/vehicle'
 require './lib/park'
 
 
+
 RSpec.describe Park do
   before(:each) do
     #Park
@@ -87,11 +88,11 @@ RSpec.describe Park do
       @park_1.add_vehicle(@vehicle_2)
 
       expect(@park_1.list_adult_attendees).to eq([
-        @charlie,
-        @steve,
-        @jude,
-        @sarah
-      ])
+        "Charlie",
+        "Steve",
+        "Jude",
+        "Sarah"
+    ].sort)
     end
 
   end
@@ -109,9 +110,9 @@ RSpec.describe Park do
       @park_1.add_vehicle(@vehicle_2)
 
       expect(@park_1.list_children_attendees).to eq([
-        @taylor,
-        @caitlin
-      ])
+        "Taylor",
+        "Caitlin"
+    ].sort)
     end
 
   end

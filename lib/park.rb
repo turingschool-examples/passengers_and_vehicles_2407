@@ -27,14 +27,28 @@ class Park
     adults = @passengers.find_all do |passenger|
       passenger.adult?
     end
-    return adults
+
+    adults_names = adults.map do |adult|
+      adult.name
+    end
+
+    adults_names_sorted = adults_names.sort
+    
+    return adults_names_sorted
   end
 
   def list_children_attendees
-    children = @passengers.find_all do |passenger|
+    childrens = @passengers.find_all do |passenger|
       !passenger.adult?
     end
-    children
+
+    childrens_names = childrens.map do |children|
+      children.name
+    end
+
+    childrens_names_sorted = childrens_names.sort
+
+    return childrens_names_sorted
   end
 
 end
