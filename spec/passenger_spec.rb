@@ -42,12 +42,12 @@ RSpec.describe Passenger do
 
   describe "#drive?" do
     it "returns a boolean" do
-      expect([true, false]).to include(@passenger_1.adult?)
+      expect([true, false]).to include(@passenger_1.driver?)
     end
 
     it "returns the expected value" do
-      expect(@passenger_1.adult?).to eq(true)
-      expect(@passenger_2.adult?).to eq(false)
+      expect(@passenger_1.driver?).to eq(true)
+      expect(@passenger_2.driver?).to eq(false)
     end
 
   end
