@@ -10,4 +10,8 @@ class Passenger
     def adult?
         @age >= 18
     end
+
+    def driver?
+        adult?
+    end
 end
