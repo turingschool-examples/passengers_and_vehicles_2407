@@ -22,10 +22,15 @@ RSpec.describe '#passenger' do
         expect(@taylor.age).to eq(12)
     end
 
-    it 'can be an adult' do
+    it 'is an adult if over age 18' do
         @charlie.adult?
         @taylor.adult?
         expect(@charlie.adult?).to eq true
         expect(@taylor.adult?).to eq false
+    end
+
+    it 'cannot be driver by default' do
+        @charlie.driver?
+        expect(@charlie.driver?).to eq false
     end
 end
