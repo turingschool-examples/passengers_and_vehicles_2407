@@ -13,22 +13,22 @@ RSpec.describe Park do
   end
 
   it 'exists' do 
+    expect(@park).to be_instance_of(Park)
+  end
+
+ xit 'has attributes' do
 
   end
 
-  it 'has attributes' do
+  xit 'can list all vehicles that entered the park' do
 
   end
 
-  it 'can list all vehicles that entered the park' do
+  xit 'can list all passengers taht entered the park' do 
 
   end
 
-  it 'can list all passengers taht entered the park' do 
+  xit 'can calculate generated revenue' do
 
-  end
-
-  it 'can calculate generated revenue' do
-    
   end
 end
