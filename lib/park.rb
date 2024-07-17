@@ -24,8 +24,16 @@ class Park
   end
 
   def list_adult_attendees
+    if @passengers.empty?
+      return []
+    end
+  
     adults = @passengers.find_all do |passenger|
       passenger.adult?
+    end
+
+    if adults.empty?
+      return []
     end
 
     adults_names = adults.map do |adult|
@@ -38,7 +46,7 @@ class Park
   end
 
   def list_children_attendees
-    if @passengers == []
+    if @passengers.empty?
       return []
     end
 

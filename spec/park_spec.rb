@@ -95,6 +95,21 @@ RSpec.describe Park do
     ].sort)
     end
 
+    ## Edge cases
+    # Edge case #1
+    it "will return an emtpy array if there hasn't been an attendee" do
+      expect(@park_1.list_adult_attendees).to eq([])
+    end
+
+    #Edge case #2
+    it "will return an emtpy array if there are no adult attendees" do
+      @vehicle_2.add_passenger(@caitlin) #kid
+      @vehicle_2.add_passenger(@taylor) #kid
+      @park_1.add_vehicle(@vehicle_2)
+      
+      expect(@park_1.list_adult_attendees).to eq([])
+    end
+
   end
 
   describe "#list_children_attendees" do
