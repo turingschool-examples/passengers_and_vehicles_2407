@@ -33,7 +33,21 @@ RSpec.describe Park do
         expect(@glacier.entrance_list).to eq([@vehicle_1, @vehicle_2, @vehicle_3])
     end
 
-    xit 'can track passengers entering' do
+    it 'can track passengers entering' do
+        @charlie = Passenger.new({"name" => "Charlie", "age" => 18}) 
+        @jude = Passenger.new({"name" => "Jude", "age" => 20})
+        @taylor = Passenger.new({"name" => "Taylor", "age" => 12})
+        @vehicle_1 = Vehicle.new("2001", "Honda", "Civic")
+
+        @vehicle_1.add_passenger(@charlie)
+        @vehicle_1.add_passenger(@jude)
+        @vehicle_1.add_passenger(@taylor)
+        @yosemite.enter(@vehicle_1)
+        
+
+        expect(@yosemite.guest_list).to eq([@charlie, @jude, @taylor])
+
+
 
     end
 end
