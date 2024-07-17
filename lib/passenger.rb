@@ -5,6 +5,7 @@ class Passenger
     def initialize(person)
         @name = person["name"]
         @age = person["age"]
+        @drives = []
     end
 
 
@@ -17,6 +18,16 @@ class Passenger
         
     end
 
+    def driver?
+        if @drives == []
+            false
+        else
+            true
+        end
+    end
 
-
+    def drive
+        @drives << true
+    end
+    
 end
