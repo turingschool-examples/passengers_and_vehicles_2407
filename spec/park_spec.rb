@@ -39,7 +39,7 @@ RSpec.describe Park do
             @park.add_vehicle(@vehicle2)
             @park.add_vehicle(@vehicle3)
 
-            expect(@park.vehicles).to eq [@vehicle1, @vehicle2, @vehicle3]
+            expect(@park.vehicles).to eq([@vehicle1, @vehicle2, @vehicle3])
         end
     end
 
@@ -48,12 +48,8 @@ RSpec.describe Park do
             @park.add_vehicle(@vehicle1)
             @park.add_vehicle(@vehicle2)
             @park.add_vehicle(@vehicle3)
-            @vehicle1.add_passenger(@charlie)
-            @vehicle2.add_passenger(@jude)
-            @vehicle3.add_passenger(@taylor)
-            @vehicle3.add_passenger(@thor)
-
-            expect(@park.all_passengers).to eq [@charlie, @jude, @taylor, @thor]
+   
+            expect(@park.all_passengers).to eq([@charlie, @jude, @taylor, @thor])
         end
     end
 
