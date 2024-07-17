@@ -14,7 +14,9 @@ RSpec.describe Park do
 
   describe "#initialize" do
     it "can initialize" do
-      expect(@vehicle_1).to be_an_instance_of(Vehicle)
+      expect(@park_1).to be_an_instance_of(Park)
+      expect(@park_1.name).to eq("Zion")
+      expect(@park_1.price).to eq(10)
 
     end
 

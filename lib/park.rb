@@ -1,10 +1,10 @@
 class Park
 
-  attr_reader :name, :park
+  attr_reader :name, :price
 
-  def initialize(name, prize)
+  def initialize(name, price)
     @name = name
-    @park = park
+    @price = price
   end
-  
+
 end
