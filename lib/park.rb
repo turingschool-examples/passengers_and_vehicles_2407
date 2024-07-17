@@ -23,7 +23,7 @@ class Park
                 passenger_names = passenger.name
             end
         elsif @vehicles_in_park.empty? == true
-            return nil
+            nil
         end
     end
 end
