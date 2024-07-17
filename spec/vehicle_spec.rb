@@ -17,5 +17,29 @@ RSpec.describe Vehicle do
 
   end
 
+  describe "#speeding?" do
+    it "checks if a vehicle is speeding, default is set to false" do
+      expect(@vehicle_1.speeding?).to eq(false)
+    end
+
+    it "will return true if speed method is called" do
+      @vehicle_1.speed
+      expect(@vehicle_1.speeding?).to eq(true)
+    end
+
+  end
+
+  describe "#speed" do
+    it "sets the vehicle to be speeding" do
+      expect(@vehicle_1.speeding?).to eq(false)
+
+      @vehicle_1.speed
+
+      expect(@vehicle_1.speeding?).to eq(true)
+    
+    end
+  end
+
+
 
 end

@@ -6,8 +6,16 @@ class Vehicle
     @year = year
     @make = make
     @model = model
+    @moving_fast = false
   end
 
+  def speed
+    @moving_fast = true
+  end
+
+  def speeding?
+    @moving_fast
+  end
   
 
 end
