@@ -29,7 +29,28 @@ RSpec.configure do |config|
     @park1.enter_park(@vehicle1)
     @park1.enter_park(@vehicle2)
     expect(@park1.vehicles).to eq([@vehicle1, @vehicle2])
+    @vehicle3.add_passenger(@charlie)  
+    @vehicle3.add_passenger(@charlie)  
+     
     @park2.enter_park(@vehicle3)
     expect(@park2.vehicles).to eq([@vehicle3])
+    # require 'pry'; binding.pry
+  end
+
+  it 'can list all the passengers that entered the park' do
+   
+    @vehicle1.add_passenger(@charlie)  
+    @vehicle2.add_passenger(@jude)
+    @park1.enter_park(@vehicle1)
+    @park1.enter_park(@vehicle2)
+    expect(@park1.vehicle_passengers).to eq(["Charlie", "Jude"])
+  end
+
+  it "an calculate revenue generated" do
+    @vehicle1.add_passenger(@charlie)  
+    @vehicle2.add_passenger(@jude)
+    @park1.enter_park(@vehicle1)
+    @park1.enter_park(@vehicle2)
+    expect(@park1.potential_revenue).to eq(20)
   end
 end
