@@ -13,6 +13,10 @@ RSpec.describe 'Park' do
         @nami = Passenger.new({"name" => "Nami", "age" => 20})  
         @chopper = Passenger.new({"name" => "Chopper", "age" => 15})
         @luffy = Passenger.new({"name" => "Luffy", "age" => 17})
+        @vehicle.add_passenger(@zoro)
+        @vehicle.add_passenger(@nami)
+        @vehicle.add_passenger(@chopper)
+        @vehicle.add_passenger(@luffy)
     end
 
     describe '#initialize()' do
@@ -29,15 +33,25 @@ RSpec.describe 'Park' do
         end
 
         it 'will hold a vehicles attribute that is initialized as an empty array' do
-            expect(@park.vehicles).to eq ({})
+            expect(@park.vehicles).to eq ([])
         end
 
         it 'will hold a passengers attribute that is initialized as an empty array' do
-            expect(@park.passengers).to eq ({})
+            expect(@park.passengers).to eq ([])
         end
 
         it 'will hold a revenue attribute that is initialized as 0' do
             expect(@park.revenue).to eq 0
+        end
+    end
+
+    describe '#admit()' do
+        it 'will add the vehicle in the argument to the @vehicles array' do
+            
+        end
+
+        it 'will add the passengeres of the vehicle in the arument to the @passengers array' do
+
         end
     end
 
