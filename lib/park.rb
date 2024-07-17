@@ -12,5 +12,12 @@ class Park
         @entrance_list << vehicle
     end
 
+    def head_count(vehicle)
+        @guest_list
+        vehicle.passengers.each do |passenger|
+            @guest_list << passenger
+        end
+    end
+
    
 end
