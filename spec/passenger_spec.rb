@@ -7,9 +7,11 @@ RSpec.describe Passenger do
   end
 
   describe 'Passengers' do 
-    it 'have a name' do 
+    it 'returns names and ages' do 
       expect(@charlie.name).to eq("Charlie")
       expect(@taylor.name).to eq("Taylor")
+      expect(@charlie.age).to eq(18)
+      expect(@taylor.age).to eq(12)
     end
   end
 
