@@ -17,9 +17,12 @@ class Park
         vehicle.charge(50)
         end
     end
+    
+    current_vehicles = {
+        vehicle_make: "Honda"
+        vehicle_model: "Civic"
+}
 
-    def current_vehicles
-        
     end
 end
 
