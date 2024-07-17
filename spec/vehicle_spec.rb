@@ -66,7 +66,16 @@ RSpec.describe 'Vehicle' do
     end
     
     describe '#passengers' do
-
+        it 'will return an array listing all the passenger instances that have been added to the vehilce' do
+            @vehicle.add_passenger(@charlie)
+            @vehicle.add_passenger(@jude)
+            @vehicle.add_passenger(@taylor)
+            
+            expect(@vehicle.passengers.length).to eq 3
+            expect(@vehicle.passengers[0].name).to eq "Charlie"
+            expect(@vehicle.passengers[1].age).to eq 20 
+            expect(@vehicle.passengers[2].driver?).to eq false
+        end
     end
     
     describe '#num_adults' do
