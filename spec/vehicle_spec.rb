@@ -10,5 +10,10 @@ RSpec.describe Vehicle do
         it 'can initialize' do
             expect(@vehicle).to be_a_instance_of(Vehicle)
         end
+        it 'has a year, make, model' do
+            expect(@vehicle.year).to eq("2001")
+            expect(@vehicle.make).to eq("Honda")
+            expect(@vehicle.model).to eq("Civic")
+        end
     end
 end
