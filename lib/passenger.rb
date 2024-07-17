@@ -7,4 +7,12 @@ class Passenger
         @name = info["name"]
         @age = info["age"]
     end
+
+    def adult?
+        if @age >= 18
+            true
+        else
+            false
+        end
+    end
 end
