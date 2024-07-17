@@ -14,4 +14,8 @@ class Park
         @vehicles = []
         @passengers = []
     end
+
+    def vehicle_pass(vehicle)
+        @vehicles << vehicle
+    end
 end

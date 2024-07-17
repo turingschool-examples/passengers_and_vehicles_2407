@@ -34,7 +34,7 @@ RSpec.describe Park do
             expect(@park_1.child_admission).to eq 20
             expect(@park_1.collected_admissions).to eq 0
         end
-        
+
         it "has empty arrays for passengers and vehicles" do
             expect(@park_1.passengers).to eq []
             expect(@park_1.vehicles).to eq []
@@ -42,6 +42,11 @@ RSpec.describe Park do
     end
 
     describe "#track_vehicles" do
+        it 'can add vehicles to the vehicles array' do
+            @park_1.vehicle_pass(@vehicle_1)
+            expect(@park_1.vehicles).to include Vehicle
+            expect(@park_1.vehicles.count).to eq 1
+        end
     end
 
     describe "#track_passengers" do
