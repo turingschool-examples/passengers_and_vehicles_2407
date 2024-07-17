@@ -1,11 +1,12 @@
 class Passenger
 
-  attr_reader :name, :age
+  attr_reader :name, :age, :drive
 
   def initialize(data)
     data.default = "n/a"
     @name = data["name"]
     @age = data["age"]
+    @drive = false
   end
 
   def adult?

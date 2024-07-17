@@ -22,12 +22,19 @@ RSpec.describe Passenger do
     end
 
     it "returns the expected value" do
-      expect(@passenger_1.adult?).to be_truthy
-      expect(@passenger_2.adult?).to be_falsey
+      expect(@passenger_1.adult?).to eq(true)
+      expect(@passenger_2.adult?).to eq(false)
     end
 
   end
 
+  describe "#drive?" do
+    it "drive is default set to false" do
+      expect(@passenger_1.drive).to eq(false)
+    end
+
+
+  end
 
 
 end
