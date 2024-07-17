@@ -10,6 +10,14 @@ RSpec.describe Vehicle do
     it 'was made this year' do 
       expect(@vehicle.year).to eq("2001")
     end
+
+    it 'has a make' do 
+      expect(@vehicle.make).to eq("Honda")
+    end
+     
+    it 'has a model name' do 
+      expect(@vehicle.model).to eq("Civic")
+    end
   end
   
 end
