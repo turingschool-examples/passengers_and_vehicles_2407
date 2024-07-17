@@ -78,5 +78,13 @@ RSpec.describe Park do
 
             expect(@park.list_adults).to eq ([@charlie, @jude, @thor])
         end
+
+        it "can list all minor passengers in abc order" do
+            @park.add_vehicle(@vehicle1)
+            @park.add_vehicle(@vehicle2)
+            @park.add_vehicle(@vehicle3)
+
+            expect(@park.list_minors).to eq ([@taylor])
+        end
     end
 end
