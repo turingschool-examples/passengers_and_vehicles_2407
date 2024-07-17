@@ -20,4 +20,12 @@ class Vehicle
   def add_passenger(passenger)
     @passengers << passenger 
   end
+
+  def num_adults
+    adult_count = 0
+    @passengers.each do |passenger|
+      adult_count += 1 if passenger.adult?
+    end
+    adult_count
+  end
 end
