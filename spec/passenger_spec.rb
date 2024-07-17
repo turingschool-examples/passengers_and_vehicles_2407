@@ -35,6 +35,10 @@ RSpec.describe'Passenger' do
     end
 
     describe '#driver?' do
+    it 'will return true or false depending on if the passenger instance considered a driver or not' do
+        expect(@charlie.driver?).to eq false
+        expect(@taylor.driver?).to eq false
+    end
 
     end
 
