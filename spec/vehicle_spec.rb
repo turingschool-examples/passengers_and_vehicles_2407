@@ -4,6 +4,7 @@ require './lib/passenger'
 RSpec.describe Vehicle do 
   before(:each) do 
     @vehicle = Vehicle.new("2001", "Honda", "Civic")
+    @vehicle_2 = Vehicle.new("2024","Mercedez", "Benz")
   end
 
   describe 'Vehicle' do 
