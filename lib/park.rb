@@ -16,4 +16,11 @@ class Park
         all_passengers = @vehicles.map { |vehicle| vehicle.passengers }
         all_passengers.flatten
     end
+
+    def collect_fee(vehicle)
+        all_passengers = @vehicles.map { |vehicle| vehicle.passengers }
+        all_passengers = all_passengers.flatten
+        adults = all_passengers.select { |passenger| passenger.adult?}
+        @revenue_collected = adults.count * @admission
+    end
 end
