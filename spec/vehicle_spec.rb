@@ -34,8 +34,14 @@ RSpec.describe Vehicle do
     end
 
     describe 'passengers' do
-        it "has an empty array of passengers" do
+        it 'has an empty array of passengers' do
             expect(@vehicle.passengers).to eq []
+        end
+
+        it 'can add to passengers' do
+            @vehicle.add_passengers(@charlie)
+
+            expect(@vehicle.passengers).to eq([@charlie])
         end
     end
 end
