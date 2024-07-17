@@ -20,4 +20,12 @@ class Park
     end
     all_passengers
   end
+
+  def revenue
+    adult_count = 0
+    passengers.each do |passenger|
+      adult_count += 1 if passenger.adult?
+    end
+    adult_count * @admission_price
+  end
 end

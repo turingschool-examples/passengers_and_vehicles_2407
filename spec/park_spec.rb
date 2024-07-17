@@ -39,7 +39,13 @@ RSpec.describe Park do
     expect(@park.passengers).to eq([@charlie, @taylor, @jude])
   end
 
-  xit 'can calculate generated revenue' do
+  it 'can calculate generated revenue' do
+    @vehicle_1.add_passenger(@charlie)
+    @vehicle_1.add_passenger(@taylor)
+    @vehicle_2.add_passenger(@jude)
 
+    @park.add_vehicle(@vehicle_1)
+    @park.add_vehicle(@vehicle_2)
+    expect(@park.revenue).to eq(40)
   end
 end
