@@ -18,4 +18,10 @@ RSpec.describe Park do
         end
     end
 
+    describe 'vehicles' do
+        it 'has an empty arraw for vehicles' do
+            expect(@park.vehicles).to eq []
+        end
+    end
+
 end
