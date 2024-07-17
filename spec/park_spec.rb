@@ -73,6 +73,8 @@ RSpec.describe Park do
 
     end
 
+    ## Edge case test
+
   end
 
   describe "#list_adult_attendees" do

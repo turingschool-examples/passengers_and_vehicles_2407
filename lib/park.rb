@@ -13,6 +13,7 @@ class Park
   end
 
   def add_vehicle(vehicle)
+    
     vehicle.passengers.each do |passenger|
       if passenger.adult?
         @revenue += @price
