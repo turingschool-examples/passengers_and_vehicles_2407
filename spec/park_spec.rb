@@ -42,7 +42,6 @@ RSpec.describe 'Park' do
 
         it 'will hold a revenue attribute that is initialized as 0' do
             expect(@park.revenue).to eq 0
-#require'pry';binding.pry
         end
     end
 

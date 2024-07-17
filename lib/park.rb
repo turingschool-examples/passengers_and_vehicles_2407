@@ -5,8 +5,10 @@ class Park
     attr_reader :name,
                 :admission_price,
                 :vehicles,
-                :passengers,
-                :revenue
+                :passengers
+
+
+    attr_accessor :revenue
 
     def initialize(name, admission_price)
         @name = name
@@ -28,6 +30,11 @@ class Park
     end
 
     def generate_revenue
-        @revenue
+        charge = @admission_price.gsub(/[^\d]/, '').to_i
+        total = 0
+        @passengers.length.times do |person|
+            total += 1
+        end
+        @revenue = total * charge
     end
 end
