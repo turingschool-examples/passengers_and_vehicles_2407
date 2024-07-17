@@ -31,7 +31,9 @@ RSpec.describe 'Vehicle' do
     end
 
     describe '#speeding?' do
-
+        it 'will return true or false based on the vehilces speeding attribute' do
+           expect(@vehicle.speeding?).to eq false 
+        end
     end
 
     describe '#speed' do
