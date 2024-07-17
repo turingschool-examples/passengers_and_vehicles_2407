@@ -23,7 +23,7 @@ RSpec.describe Vehicle do
             expect(@vehicle.speeding?).to eq false
         end
 
-        it 'changes speeding to true shen speed method is used' do
+        it 'changes speeding to true when speed method is used' do
             @vehicle.speed
 
             expect(@vehicle.speeding?).to eq true
