@@ -23,6 +23,8 @@ RSpec.describe Passenger do
     end
 
     it 'are they able to drive' do
+        @passenger_1.drive
+        @passenger_2.drive
         expect(@passenger_1.driver?).to be(true)
         expect(@passenger_2.driver?).to be(false)
     end
