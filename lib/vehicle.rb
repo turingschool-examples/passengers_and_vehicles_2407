@@ -1,3 +1,5 @@
+require "./lib/passenger"
+
 class Vehicle
 
     attr_reader :year, :make, :model, :passengers
@@ -27,6 +29,10 @@ class Vehicle
     def add_passenger(passenger)
         @passengers << passenger
        
+    end
+
+    def num_adults
+        @passengers.select {|passenger| passenger.adult?}.count
     end
 
 end
