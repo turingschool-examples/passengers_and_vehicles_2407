@@ -1,4 +1,6 @@
 require "./lib/park"
+require "./lib/passenger"
+require "./lib/vehicle"
 
 RSpec.describe Park do
     before(:each) do
@@ -14,7 +16,7 @@ RSpec.describe Park do
         @vehicle_1.add_passenger(@charlie)
         @vehicle_1.add_passenger(@taylor)
         @vehicle_1.add_passenger(@george)
-        
+
         @vehicle_2 = Vehicle.new('2013', 'Dodge', 'Dart')
         @vehicle_1.add_passenger(@george)
         @vehicle_1.add_passenger(@taylor)
@@ -22,6 +24,21 @@ RSpec.describe Park do
     end
 
     describe "#initialize" do
+        it "exists" do
+            expect(@park_1).to be_an_instance_of Park
+        end
+
+        it "has attributes accessible" do
+            expect(@park_1.name).to eq "Yellowstone National Park"
+            expect(@park_1.adult_admission).to eq 40
+            expect(@park_1.child_admission).to eq 20
+            expect(@park_1.collected_admissions).to eq 0
+        end
+        
+        it "has empty arrays for passengers and vehicles" do
+            expect(@park_1.passengers).to eq []
+            expect(@park_1.vehicles).to eq []
+        end
     end
 
     describe "#track_vehicles" do
