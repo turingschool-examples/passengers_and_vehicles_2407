@@ -5,6 +5,9 @@ require './lib/park'
 RSpec.describe Park do
     before(:each) do
         @park = Park.new("Yellowstone", 50)
+        @vehicle1 = Vehicle.new("2001", "Honda", "Civic")
+        @vehicle2 = Vehicle.new("2012", "Honda", "Pilot")
+        @vehicle3 = Vehicle.new("2023", "Tesla", "Y")
     end
 
     describe 'initialize' do
